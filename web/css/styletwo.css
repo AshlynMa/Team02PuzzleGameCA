@@ -1,0 +1,503 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jul 31, 2015, 6:41:49 PM
+    Author     : Ashlyn
+*/
+
+@import url(http://fonts.googleapis.com/css?family=Exo:100,200,400);
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:700,400,300);
+
+body
+{
+    margin: 0;
+    padding: 0em;
+    line-height: 2em;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 10pt;
+    color: #686868;
+}
+
+body, #skel-panels-pageWrapper
+{
+    background: #101214 url(../imgweb/main-bg.png) repeat;
+}
+
+
+h1, h2, h3 {
+    margin: 0;
+    padding: 0;
+    font-weight: 300;
+    color: #CFCFCF;
+}
+
+h2
+{
+    letter-spacing: -1px;
+    font-size: 2.00em;
+}
+
+p, ol, ul
+{
+    margin-top: 1em;
+}
+
+p
+{
+}
+
+a
+{
+    text-decoration: underline;
+    color: #909090;
+}
+
+a:hover
+{
+    text-decoration: none;
+}
+
+/* Header */
+
+#header {
+    overflow: hidden;
+    position: relative;
+    height: 8em;
+}
+
+/* Logo */
+
+#logo {
+    position: absolute;
+    top: 3em;
+    left: 0;
+}
+
+#logo h1 a {
+    float: left;
+    padding: 0em 0.25em 0em 0em;
+    letter-spacing: -1px;
+    text-decoration: none;
+    font-family: 'Exo', sans-serif;
+    text-transform: uppercase;
+    font-size: 2.50em;
+    font-weight: 800;
+    color: #FFF;
+}
+
+#logo h1 a span{
+    color: #5379fa
+}
+
+
+
+/* Menu */
+
+#nav {
+    position: absolute;
+    top: 1.1em;
+    right: 0;
+}
+
+#nav ul {
+    text-align: center;
+}
+
+#nav li {
+    display: inline-block;
+}
+
+#nav a {
+    display: block;
+    float: left;
+    padding: 1em 1.5em;
+    border-radius: 4px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1.10em;
+    color: #FFF;
+    outline: 0;
+}
+
+#nav .current_page_item {
+}
+
+#nav .current_page_item a {
+    background: #2B8FC4;
+    box-shadow: inset 0px -15px 10px 0px rgba(0,0,0,0.10);
+    text-shadow: none;
+    color: #FFFFFF;
+}
+
+#nav a:hover {
+}
+
+/* Image Style 1 */
+
+.image-style1
+{
+    display: block;
+    width: 100%;
+}
+
+/* Buttons Style 1 */
+
+
+.button
+{
+    position: relative;
+    display: inline-block;
+    background: #2B8FC4;
+    padding: 0.8em 2em;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: 300;
+    color: #FFF !important;
+    -moz-transition: color 0.35s ease-in-out, background-color 0.35s ease-in-out;
+    -webkit-transition: color 0.35s ease-in-out, background-color 0.35s ease-in-out;
+    -o-transition: color 0.35s ease-in-out, background-color 0.35s ease-in-out;
+    -ms-transition: color 0.35s ease-in-out, background-color 0.35s ease-in-out;
+    transition: color 0.35s ease-in-out, background-color 0.35s ease-in-out;
+    text-align: center;
+}
+
+.button:hover
+{
+    background: #167cb2;
+    color: #FFF !important;
+}
+
+.button-alt
+{
+    padding: 0.9em 2em;
+    font-size: 1.5em;
+}
+
+/* Header */
+
+#header-wrapper
+{
+    background: url(../imgweb/bg.jpg) no-repeat center top;
+    background-size: cover;
+    position: relative;
+}
+
+#header-wrapper:before
+{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(60,50,70,0.5);
+}
+
+#header {
+    position: relative;
+    z-index: 1;
+}
+
+header
+{
+    margin-bottom: 3em;
+    position: relative;
+}
+
+header h2
+{
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+header .byline
+{
+    display: block;
+    margin: 1.50em 0em;
+    line-height: 2em;
+    font-weight: 200;
+    color: rgba(255,255,255,.8);
+}
+
+/* Banner */
+
+#banner
+{
+    overflow: hidden;
+    padding: 10em 0em;
+    text-align: center;
+    z-index: 1;
+    position: relative;
+}
+
+#banner header h2
+{
+    text-transform: uppercase;
+    font-size: 3em;
+    color: #FFF;
+}
+
+#banner header .byline
+{
+    padding: 0em 5em;
+    font-size: 1.50em;
+}
+
+#banner .button
+{
+    margin-top: 1em;
+}
+
+/* Wrapper */
+
+#wrapper
+{
+    padding: 5em 0em 3em 0em;
+}
+
+#page
+{	
+    padding: 5em 0em 3em 0em;
+}
+
+/* Content */
+
+#content
+{
+}
+
+#content a img
+{
+    display: block;
+    width: 100%;
+    margin-bottom: 1.50em;
+    border-radius: 5px;
+}
+
+#content .main-title
+{
+    font-size: 3.00em;
+}
+
+#content .button
+{
+    margin-top: 2em;
+}
+
+
+/* Container */
+
+body {
+    min-width: 1200px;
+}
+
+.container {
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Modifiers */
+
+.container.small {
+    width: 900px;
+}
+
+.container.big {
+    width: 100%;
+    max-width: 1500px;
+    min-width: 1200px;
+}
+
+/* Grid */
+
+/* Cells */
+
+.\31 2u { width: 100% }
+.\31 1u { width: 91.6666666667% }
+.\31 0u { width: 83.3333333333% }
+.\39 u { width: 75% }
+.\38 u { width: 66.6666666667% }
+.\37 u { width: 58.3333333333% }
+.\36 u { width: 50% }
+.\35 u { width: 41.6666666667% }
+.\34 u { width: 33.3333333333% }
+.\33 u { width: 25% }
+.\32 u { width: 16.6666666667% }
+.\31 u { width: 8.3333333333% }
+.\-11u { margin-left: 91.6666666667% }
+.\-10u { margin-left: 83.3333333333% }
+.\-9u { margin-left: 75% }
+.\-8u { margin-left: 66.6666666667% }
+.\-7u { margin-left: 58.3333333333% }
+.\-6u { margin-left: 50% }
+.\-5u { margin-left: 41.6666666667% }
+.\-4u { margin-left: 33.3333333333% }
+.\-3u { margin-left: 25% }
+.\-2u { margin-left: 16.6666666667% }
+.\-1u { margin-left: 8.3333333333% }
+
+.row > * {
+    padding: 50px 0 0 50px;
+    
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.row + .row > * {
+    padding-top: 50px;
+}
+
+.row {
+    margin-left: -50px;
+}
+
+/* Rows */
+
+.row:after {
+    content: '';
+    display: block;
+    clear: both;
+    height: 0;
+}
+
+.row:first-child > * {
+    padding-top: 0;
+}
+
+.row > * {
+    padding-top: 0;
+}
+
+/* Modifiers */
+
+/* Flush */
+
+.row.flush {
+    margin-left: 0;
+}
+
+.row.flush > * {
+    padding: 0 !important;
+}
+
+/* Quarter */
+
+.row.quarter > * {
+    padding: 12.5px 0 0 12.5px;
+}
+
+.row.quarter + .row.quarter > * {
+    padding-top: 12.5px;
+}
+
+.row.quarter {
+    margin-left: -12.5px;
+}
+
+/* Half */
+
+.row.half > * {
+    padding: 25px 0 0 25px;
+}
+
+.row.half + .row.half > * {
+    padding-top: 25px;
+}
+
+.row.half {
+    margin-left: -25px;
+}
+
+/* One and (a) Half */
+
+.row.oneandhalf > * {
+    padding: 75px 0 0 75px;
+}
+
+.row.oneandhalf + .row.oneandhalf > * {
+    padding-top: 75px;
+}
+
+.row.oneandhalf {
+    margin-left: -75px;
+}
+
+/* Double */
+
+.row.double > * {
+    padding: 100px 0 0 100px;
+}
+
+.row.double + .row.double > * {
+    padding-top: 100px;
+}
+
+.row.double {
+    margin-left: -100px;
+}
+
+
+/* Copyright */
+
+#copyright
+{
+    overflow: hidden;
+    padding: 3em 0em 6em 0em;
+    border-top: 1px solid #212124;
+    text-align: center;
+}
+
+#copyright p
+{
+    font-size: 1em;
+}
+
+#copyright a
+{
+    color: #949494;
+}
+
+
+/* Container */
+
+body {
+    min-width: 1200px;
+}
+
+.container {
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Modifiers */
+
+.container.small {
+    width: 900px;
+}
+
+.container.big {
+    width: 100%;
+    max-width: 1500px;
+    min-width: 1200px;
+}
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Aug 4, 2015, 1:32:19 PM
+    Author     : User
+*/
+
