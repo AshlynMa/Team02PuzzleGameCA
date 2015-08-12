@@ -1,0 +1,64 @@
+/* create database */
+CREATE SCHEMA `team02_PuzzleGame` DEFAULT CHARACTER SET utf8 ;
+
+
+
+/* create User table */
+CREATE TABLE `team02_PuzzleGame`.`User` (
+  `userID` INT NOT NULL AUTO_INCREMENT,
+  `userName` VARCHAR(50) NOT NULL,
+  `email` VARCHAR(20) NOT NULL UNIQUE,
+  `password` VARCHAR(15) NOT NULL,
+   PRIMARY KEY (`userID`));
+  
+  /* create Game table */
+  CREATE TABLE `team02_PuzzleGame`.`Game` (
+  `gameID` INT NOT NULL AUTO_INCREMENT,
+  `level` VARCHAR(20) NULL,
+  PRIMARY KEY (`gameID`));
+   
+  /* create GameLog */
+  CREATE TABLE `team02_PuzzleGame`.`GameLog` (
+  `gameID` INT NOT NULL,
+  `userID` INT NOT NULL,
+  `score` INT NULL,
+  PRIMARY KEY (`gameID`, `userID`),
+  CONSTRAINT FOREIGN KEY(`gameID`) REFERENCES `team02_PuzzleGame`.`Game`(`gameID`) on delete cascade,
+  CONSTRAINT FOREIGN KEY(`userID`) REFERENCES `team02_PuzzleGame`.`User`(`userID`) on delete cascade);
+
+/* dummy data */
+ 
+ /* User */
+ INSERT INTO `team02_PuzzleGame`.`User`(`userName`, `email`, `password`)
+ VALUES 
+ ('Markiplier','markiplier@gmail.com','markipler123'),
+ ('Hnin','hnin@gmail.com','hnin123'),
+ ('Selena','selena@gmail.com','selena123'),
+ ('Ashlyn','sungemon@gmail.com','ashlyn123');
+ 
+ /* Game */
+ INSERT INTO `team02_PuzzleGame`.`Game`(`level`)
+ VALUES 
+ ('Beginner'),
+ ('Expert'),
+ ('Intermediate');
+ 
+ /* GameLog */
+ INSERT INTO `team02_PuzzleGame`.`GameLog`(`gameID`,`userID`, `score`)
+ VALUES 
+ ('1','1','10'),
+ ('1','2','12'),
+ ('1','3','14'),
+ ('1','4','10'),
+ ('2','1','10'),
+ ('2','2','12'),
+ ('2','3','14'),
+ ('2','4','10'),
+ ('3','1','10'),
+ ('3','2','12'),
+ ('3','3','14'),
+ ('3','4','10');
+ 
+  
+  
+  
