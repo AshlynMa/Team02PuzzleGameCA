@@ -8,10 +8,11 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Log In</title>
+        <title>Puzzle Game - Log In</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="css/style.css">
+        <script type="text/javascript" src="validation.js"></script>
     </head>
     <body>
         <form action="loginServlet" method="post">
@@ -22,8 +23,8 @@
             </div>
             <br>
             <div class="login">
-                <input type="text" placeholder="username" name="username"><br>
-                <input type="password" placeholder="password" name="password"><br><br>
+                <input type="text" placeholder="username" name="username" required pattern="\w+" maxlength=50><br><br>
+                <input type="password" placeholder="password" name="password" maxlength=15><br><br>
                 <input type="submit" value="Login" />
                 <h2>Not a member? <a href="signup.jsp">Sign Up</a></h2>
 

@@ -27,7 +27,7 @@
                                 <h2>Welcome to Puzzle Game</h2>
                                 <span class="byline">Please create a new game to play!</span>
                             </header>
-                            <a href="#" class="button button-alt">Create New Game</a>
+                            <a href="game.jsp" class="button button-alt">Create New Game</a>
                         </section>
                     </div>
                 </div>
@@ -37,7 +37,7 @@
         <!-- Header Ends Here -->
 
         <!-- Featured Area -->
-        <div id="featured-wrapper">
+<!--        <div id="featured-wrapper">
 
             <div class="container">
                 <div class="row double">
@@ -66,7 +66,7 @@
                 </div>
             </div>
 
-        </div>
+        </div>-->
 
 
         <!-- Featured Ends Here -->

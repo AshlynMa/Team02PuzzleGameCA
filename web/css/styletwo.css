@@ -23,7 +23,8 @@ body
 
 body, #skel-panels-pageWrapper
 {
-    background: #101214 url(../imgweb/main-bg.png) repeat;
+   /*    background: #101214 url(../imgweb/main-bg.png) repeat;*/
+    background-color: #fdfbfb;
 }
 
 
@@ -501,3 +502,4 @@ and open the template in the editor.
     Author     : User
 */
 
+.style1 { background:white no-repeat top center; border-top: 2px solid #ffffff; border-left: 2px solid #ffffff; border-right: 2px solid #ffffff; border-bottom: 2px solid #ffffff; }

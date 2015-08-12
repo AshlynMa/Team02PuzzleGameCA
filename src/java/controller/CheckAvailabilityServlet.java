@@ -5,11 +5,12 @@
  */
 package controller;
 
-import business.UserBean;
 import java.io.IOException;
 import java.io.PrintWriter;
-import javax.ejb.EJB;
-import javax.servlet.RequestDispatcher;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -20,10 +21,10 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Ashlyn
  */
-@WebServlet(name = "SignupServlet", urlPatterns = {"/signupServlet"})
-public class SignupServlet extends HttpServlet {
+@WebServlet(name = "CheckAvailabilityServlet", urlPatterns = {"/CheckAvailabilityServlet"})
+public class CheckAvailabilityServlet extends HttpServlet {
 
-    @EJB private UserBean ub;
+    private static final long serialVersionUID = -734503860925086969L;
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -37,9 +38,18 @@ public class SignupServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-
-        }
+//        try (PrintWriter out = response.getWriter()) {
+//            /* TODO output your page here. You may use following sample code. */
+//            out.println("<!DOCTYPE html>");
+//            out.println("<html>");
+//            out.println("<head>");
+//            out.println("<title>Servlet CheckAvailabilityServlet</title>");            
+//            out.println("</head>");
+//            out.println("<body>");
+//            out.println("<h1>Servlet CheckAvailabilityServlet at " + request.getContextPath() + "</h1>");
+//            out.println("</body>");
+//            out.println("</html>");
+//        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -54,11 +64,7 @@ public class SignupServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
-        ub.createUser(request.getParameter("username"), request.getParameter("email"), request.getParameter("password"));
-        RequestDispatcher view = request.getRequestDispatcher("successful.jsp");
-        view.forward(request, response);
-
+        processRequest(request, response);
     }
 
     /**
@@ -72,8 +78,35 @@ public class SignupServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+       PrintWriter out = response.getWriter();
+        try {
 
+            String connectionURL = "jdbc:mysql://localhost:3306/team02_puzzlegame"; // students is my database name
+            Connection connection = null;
+            Class.forName("com.mysql.jdbc.Driver").newInstance();
+            connection = DriverManager.getConnection(connectionURL, "root", "password");
+            String username = request.getParameter("username");
+            PreparedStatement ps = connection.prepareStatement("select userName from User where userName=?");
+            ps.setString(1,username);
+            ResultSet rs = ps.executeQuery();
+             
+            if (!rs.next()) {
+                out.println("<font color=green><b>"+username+"</b> is avaliable");
+            }
+            else{
+            out.println("<font color=red><b>"+username+"</b> is already in use</font>");
+            }
+            out.println();
+
+
+
+        } catch (Exception ex) {
+
+            out.println("Error ->" + ex.getMessage());
+
+        } finally {
+            out.close();
+        }
     }
 
     /**

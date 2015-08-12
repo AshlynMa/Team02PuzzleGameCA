@@ -14,20 +14,19 @@ import model.User;
  *
  * @author Ashlyn
  */
-
 @Stateless
 public class UserBean {
-    
-    @PersistenceContext(unitName="PuzzleGamePU") private EntityManager em;
+
+    @PersistenceContext(unitName = "PuzzleGamePU")
+    private EntityManager em;
 
     public User createUser(String userName, String email, String password) {
-        
-        
+
         User user = new User();
         user.setUserName(userName);
         user.setEmail(email);
         user.setPassword(password);
         em.persist(user);
-        return(user);
+        return (user);
     }
 }
