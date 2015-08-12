@@ -21,7 +21,7 @@ and open the template in the editor.
         <link rel="stylesheet" type="text/css" href="css/styletwo.css">
         <link rel="stylesheet" type="text/css" href="css/component.css">
         <script type="text/javascript" src="javascript/jquery-1.4.2.min.js"></script>
-       
+
     </head>
 
     <body class="homepage">
@@ -32,7 +32,6 @@ and open the template in the editor.
     <center>
         <table>
             <tr>
-                <!--                <td width="100"><input type="button" value="Pause" onclick="toggle_timer()"></td>-->
                 <td width="80">&nbsp;</td>
                 <td width="130">Timer: <input type="text" id="tot_time" readonly size="5" value="0"></td>
                 <td width="130">Score <input type="text" id="tot_score" readonly size="5" value="0"></td>
@@ -43,7 +42,7 @@ and open the template in the editor.
         </table>
 
         <br><br>
-        <!-- set up the playing area -->
+
         <table cellspacing=0 cellpadding=0>
             <tr>
                 <td width="200" height="140" valign="middle" align="center">
@@ -101,7 +100,7 @@ and open the template in the editor.
                 </td>
             </tr>
         </table>
-        
+
         <jsp:include page="footer.jsp" flush="true"/>
     </center>
 
@@ -130,7 +129,7 @@ and open the template in the editor.
                     }
 
         function shuffle() {
-            //  var d = new Date();
+
             var cardindex = allcards;
             var randnum = 0;
             var top = 0;
@@ -142,15 +141,11 @@ and open the template in the editor.
                     cardindex[j] = cardindex[j + 1];
                 cardindex.pop();
             }
-            //  var d2= new Date();
-            //  var timetook=d2-d;
-            //  document.write('The shuffle took '+timetook+' milliseconds');
+
         }
 
         function startgame() {
-//            document.getElementById('ave_time').value = " ";
-//            document.getElementById('quick_time').value = " ";
-//            document.getElementById('slow_time').value = " ";
+
             shuffle();
             for (i = 1; i < 4; i++) {
                 for (j = 1; j < 5; j++) {
@@ -172,7 +167,7 @@ and open the template in the editor.
                 second = parseInt(totalTime % 60);
                 setTimeout('CheckTime()', 1000);
             }
-            else{
+            else {
                 //setTimeout('timer()',200);
                 alert('Timed Out!');
                 location.reload('game.jsp');
@@ -180,14 +175,8 @@ and open the template in the editor.
 
         }
 
-//        var end_time = 0;
+
         var tot_time = 0;
-//        var ave_time = 0;
-//        var quick_time = 0;
-//        var slow_time = 0;
-//        var timer_on = 0;
-//        var passed = 0;
-//        var times = new Array();
         function starttimer() {
             timer_on = 1;
             setTimeout('timer()', 250);
@@ -238,14 +227,11 @@ and open the template in the editor.
         function checkmatch() {
             for (i = 0; i < 4; i++) {
                 if (oddmanout(placedcards[selectarr[0]].charAt(i), placedcards[selectarr[1]].charAt(i), placedcards[selectarr[2]].charAt(i))) {
-                    //	  alert('Not a match: '+placedcards[selectarr[0]].charAt(i)+', '+placedcards[selectarr[1]].charAt(i)+', '+placedcards[selectarr[2]].charAt(i)+'\r\n'+
-                    //			placedcards[selectarr[0]]+'\r\n'+placedcards[selectarr[1]]+'\r\n'+placedcards[selectarr[2]]);
                     cleanup();
                     return;
                 }
             }
-            // match found correctly, remove cards and add new ones
-//            time_event();
+
             document.getElementById('matchfound').innerHTML = "Match: <font color=\"#FF0000\">waiting</font>";
             for (i = 0; i < 3; i++) {
                 placedcards[selectarr[i]] = "";
@@ -294,7 +280,7 @@ and open the template in the editor.
                 findmatch(2);
                 return;
             }
-            // add cards to queue
+
             var pos = cardqueue.length;
             var j = 0;
             for (i = pos; i < pos + 3; i++) {
@@ -420,17 +406,14 @@ and open the template in the editor.
             }
             else {
                 if (mode === 2 && (placedcards["r4c1"] !== "" || nextcard >= 81)) {
-//                    stoptimer();
                     document.getElementById('matchfound').innerHTML = "Match: <font color=\"#FF0000\">None</font>";
                     return;
                 }
                 if (placedcards["r4c1"] !== "") {
-//                    stoptimer();
-                    alert('There are no matches. In addition, there ain\'t enough room in the browser for more cards. Game over.');
+                    alert('Game Over');
                     return;
                 }
                 if (nextcard >= 81) {
-//                    stoptimer();
                     alert('There are no more matches.');
                     return;
                 }
@@ -442,7 +425,6 @@ and open the template in the editor.
                         cardqueue[i] = new Array();
                         cardqueue[i]['card'] = cards[nextcard];
                         cardqueue[i]['cell'] = cname;
-                        //		alert('adding exta card: cardqueue['+i+'][\'card\']="'+cards[nextcard]+'\r\n cardqueue['+i+'][\'cell\']="'+cname);
                         j++;
                         nextcard++;
                     }
@@ -514,32 +496,6 @@ and open the template in the editor.
                     image[n].src = imgname;
                 }
     </script>
-
-    <!--        <form action="CreateNewGameServlet" method="get" >
-    -->
-
-    <!--            <div id="banner">
-                        <div class="container">
-                            <div class="row">
-                                <section class="12u">
-                                    <input type="submit" value="Create New Game">
-                                </section>
-                            </div>
-                        </div>
-                    </div>-->
-
-    <!--            <br>
-    
-                <div class="onerow">
-                    <div class="col2">&nbsp;</div>
-                    <div class="col3"></div>
-                    <div class="col2">&nbsp;</div>
-                    <div class="col2">&nbsp;</div>
-                    <div id="copyright" class="container">
-                        Team 02 Java CA
-                    </div>
-                </div>
-            </form>-->
 </body>
 </html>
 
